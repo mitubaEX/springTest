@@ -2,12 +2,11 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
+apply plugin: 'war'
 
 mainClassName = "com.mituba.webapp.Main"
 
 repositories{
-  jcenter()
-  mavenLocal()
   mavenCentral();
 }
 
@@ -18,6 +17,18 @@ dependencies {
     //compile 'com.github.pochi:pochi-runner:1.0-SNAPSHOT'
     /* use library in ./src/main/lib */
     //compile fileTree(dir: './src/main/lib', includes: ['*.jar'])
+
+    compile 'org.springframework:spring-context:4.3.7.RELEASE'
+
+
+    /* // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot                             */
+    /* compile group: 'org.springframework.boot', name: 'spring-boot', version: '1.5.2.RELEASE'               */
+    /* // https://mvnrepository.com/artifact/org.springframework/spring-web                                   */
+    /* compile group: 'org.springframework', name: 'spring-web', version: '4.3.7.RELEASE'                     */
+    /* // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure               */
+    /* compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '1.5.2.RELEASE' */
+    /* // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web                 */
+    /* compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.2.RELEASE'   */
 }
 
 jar {
