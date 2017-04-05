@@ -15,6 +15,12 @@ public class Main {
         return "Hello World!";
     }
 
+    @RequestMapping("/test")
+    // @ResponseBody
+    String test() {
+        return "index";
+    }
+
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Main.class, args);
     }
