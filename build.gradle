@@ -19,6 +19,7 @@ dependencies {
     //compile fileTree(dir: './src/main/lib', includes: ['*.jar'])
 
     compile 'org.springframework:spring-context:4.3.7.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE")
 
 
     /* // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot                             */

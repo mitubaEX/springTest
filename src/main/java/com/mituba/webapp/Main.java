@@ -1,25 +1,21 @@
 package com.mituba.webapp;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.*;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
 
-@Configuration
-@ComponentScan
-public class Main{
+@Controller
+@EnableAutoConfiguration
+public class Main {
 
-    @Bean
-    MessageService mockMessageService() {
-        return new MessageService() {
-            public String getMessage() {
-              return "Hello World!";
-            }
-        };
+    @RequestMapping("/")
+    @ResponseBody
+    String home() {
+        return "Hello World!";
     }
 
-  public static void main(String[] args) {
-      ApplicationContext context =
-          new AnnotationConfigApplicationContext(Main.class);
-      MessagePrinter printer = context.getBean(MessagePrinter.class);
-      printer.printMessage();
-  }
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(Main.class, args);
+    }
 }
